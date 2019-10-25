@@ -1,0 +1,23 @@
+<nav ptt-tab-nav-bar [inkBarPosition]="inkPosition" color="warn" [backgroundColor]="background">
+  <a mat-tab-link *ngFor="let link of links"
+     (click)="activeLink = link"
+     [active]="activeLink == link"> {{link}} </a>
+</nav>
+
+<button mat-raised-button class="example-action-button" (click)="toggleBackground()">
+  Toggle background
+</button>
+<button mat-raised-button class="example-action-button" (click)="addLink()">
+  Add link
+</button>
+
+
+<mat-form-field>
+  <mat-label>Ink Bar position
+  </mat-label>
+  <mat-select [(ngModel)]="inkPosition">
+    <mat-option *ngFor="let pos of positions" [value]="pos">
+      {{ pos }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
